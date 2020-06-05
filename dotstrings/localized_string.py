@@ -89,7 +89,7 @@ class LocalizedString:
         hash_input = hash_input.replace("\\n", "\n")  # Replace "slash n" with newline character
         hash_input = hash_input.replace('\\"', '"')  # Replace "slash quote" with quote character
 
-        key = hashlib.md5(hash_input.encode("utf-8")).hexdigest()
+        key = hashlib.md5(hash_input.encode("utf-8")).hexdigest()[0:8]
 
         return key
 
